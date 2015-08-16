@@ -12,8 +12,8 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "Evansims\\": "src/"
+        "psr-4": {
+            "Evansims\\Socialworth": "src/"
         }
     },
     "require": {
