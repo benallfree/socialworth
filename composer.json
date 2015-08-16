@@ -13,7 +13,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Evansims\\Socialworth": "src/"
+            "Evansims\\Socialworth\\": "src/"
         }
     },
     "require": {
