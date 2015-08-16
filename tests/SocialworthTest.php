@@ -1,7 +1,8 @@
 <?php
+
 namespace Tests\Socialworth;
 
-use Evansims\Socialworth;
+use Evansims\Socialworth\Socialworth;
 
 class SocialworthTest extends \PHPUnit_Framework_TestCase
 {

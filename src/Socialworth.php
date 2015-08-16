@@ -28,7 +28,7 @@ class Socialworth
      */
     public function __construct($url = null, array $services = [])
     {
-        $this->setUrl($url);
+        $this->url($url);
 
         if (!empty($services)) {
             $this->services = array_fill_keys(array_keys($this->services), false);
@@ -39,13 +39,18 @@ class Socialworth
         }
     }
 
-    public function setUrl($url)
+    public function url($url)
     {
-        if (filter_var($url, FILTER_VALIDATE_URL)) {
-            $this->url = $url;
-            
+        if ($url) {
+            if (filter_var($url, FILTER_VALIDATE_URL)) {
+                $this->url = $url;
+                
+            } else {
+                throw new \InvalidArgumentException(_('The address provided is not a valid URL.'));
+            }
+
         } else {
-            throw new \InvalidArgumentException(_('The address provided is not a valid URL.'));
+            return $this->url;
         }
 
         return $this;

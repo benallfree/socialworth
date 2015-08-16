@@ -6,7 +6,6 @@ A simple PHP library for determining the popularity of a given URL by querying s
 It presently supports:
 - Twitter (counts mentions and retweets)
 - Facebook (counts likes, comments and shares)
-- Google+ (+1s)
 - Pinterest (shares)
 - Reddit (counts submitted stories and upvotes)
 - StumbleUpon views
@@ -39,7 +38,7 @@ before invoking Socialworth:
 To query all supported services for a URL:
 
     <?php
-    use Evansims\Socialworth;
+    use Evansims\Socialworth\Socialworth;
 
     $socialworth = new Socialworth('https://github.com/');
     var_dump($socialworth->all());
@@ -48,7 +47,7 @@ To query all supported services for a URL:
 Alternatively you can query just one service:
 
     <?php
-    use Evansims\Socialworth;
+    use Evansims\Socialworth\Socialworth;
 
     var_dump(Socialworth::twitter('https://github.com/'));
     ?>
@@ -56,10 +55,9 @@ Alternatively you can query just one service:
 Or leave out specific services from your query:
 
     <?php
-    use Evansims\Socialworth;
+    use Evansims\Socialworth\Socialworth;
 
-    $socialworth = new Socialworth('https://github.com/');
-    $socialworth->linkedin = false;
+    $socialworth = new Socialworth(['linkedin', 'twitter']) // won't do facebook etc.
 
     var_dump($socialworth->all());
     ?>
@@ -68,7 +66,7 @@ The `all()` method will return an object that you can use to grab individual
 service results or find the combined popularity from the services:
 
     <?php
-    use Evansims\Socialworth;
+    use Evansims\Socialworth\Socialworth;
 
     $socialworth = new Socialworth('https://github.com/');
     $response = $socialworth->all();
@@ -102,7 +100,6 @@ Whether from the CLI or the browser, you will receive a JSON object back.
         "facebook": 15284,
         "pinterest": 157,
         "reddit": 5,
-        "googleplus": 6049,
         "stumbleupon": 297,
         "linkedin": 0
     }
