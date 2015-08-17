@@ -183,27 +183,27 @@ class SocialworthTest extends \PHPUnit_Framework_TestCase
         $this->assertEmpty(Socialworth::reddit($this->test_no_results_url), _("Reddit bogus url test did not return expected response."));
     }
 
-    public function testHackerNews()
-    {
-        $this->markTestSkipped(_("Hacker News API endpoint is offline."));
-        //$this->assertNotEmpty(Socialworth::hackernews($this->test_url), _("Hacker News test did not return expected response."));
-    }
+    // public function testHackerNews()
+    // {
+    //     $this->markTestSkipped(_("Hacker News API endpoint is offline."));
+    //     //$this->assertNotEmpty(Socialworth::hackernews($this->test_url), _("Hacker News test did not return expected response."));
+    // }
 
-    public function testHackerNewsBogus()
-    {
-        $this->markTestSkipped(_("Hacker News API endpoint is offline."));
-        //$this->assertEmpty(Socialworth::hackernews($this->test_no_results_url), _("Hacker News bogus url test did not return expected response."));
-    }
+    // public function testHackerNewsBogus()
+    // {
+    //     $this->markTestSkipped(_("Hacker News API endpoint is offline."));
+    //     //$this->assertEmpty(Socialworth::hackernews($this->test_no_results_url), _("Hacker News bogus url test did not return expected response."));
+    // }
 
-    public function testGooglePlus()
-    {
-        $this->assertNotEmpty(Socialworth::googleplus($this->test_url), _("Google+ test did not return expected response."));
-    }
+    // public function testGooglePlus()
+    // {
+    //     $this->assertNotEmpty(Socialworth::googleplus($this->test_url), _("Google+ test did not return expected response."));
+    // }
 
-    public function testGooglePlusBogus()
-    {
-        $this->assertEmpty(Socialworth::googleplus($this->test_no_results_url), _("Google+ bogus url test did not return expected response."));
-    }
+    // public function testGooglePlusBogus()
+    // {
+    //     $this->assertEmpty(Socialworth::googleplus($this->test_no_results_url), _("Google+ bogus url test did not return expected response."));
+    // }
 
     public function testStumbleUpon()
     {
