@@ -72,7 +72,7 @@ class Socialworth
         return (Object) $response;
     }
 
-    public function setClient (Client $client)
+    public function setClient(Client $client)
     {
         $this->client = $client;
     }
