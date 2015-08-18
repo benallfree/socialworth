@@ -72,6 +72,11 @@ class Socialworth
         return (Object) $response;
     }
 
+    public function setClient (Client $client)
+    {
+        $this->client = $client;
+    }
+
     public function __set($service, $enabled)
     {
         if (isset($this->services[$service])) {
@@ -154,7 +159,7 @@ class Socialworth
         }
 
         if ( !$this->client) {
-            $this->client = new Client();
+            $this->setClient(new Client());
         }
 
         $response = $this->client->get(rtrim($endpoint, '?&'));

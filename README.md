@@ -18,6 +18,7 @@ most popular articles for optimizing placement, or featuring social network
 counters on your pages without relying on bloated external JavaScript includes.
 
 ## Installation
+
 To add this package as a dependency for your project, simply add
 `evansims/socialworth` to your project's composer.json file.
 Here is an example of a minimal composer.json file:
@@ -37,44 +38,43 @@ before invoking Socialworth:
 ## Usage
 To query all supported services for a URL:
 
-    <?php
-    use Evansims\Socialworth\Socialworth;
+```php
+use Evansims\Socialworth\Socialworth;
 
-    $socialworth = new Socialworth('https://github.com/');
-    var_dump($socialworth->all());
-    ?>
-
+$socialworth = new Socialworth('https://github.com/');
+var_dump($socialworth->all());
+```
 Alternatively you can query just one service:
 
-    <?php
-    use Evansims\Socialworth\Socialworth;
-
-    var_dump(Socialworth::twitter('https://github.com/'));
-    ?>
+```php
+var_dump(Socialworth::twitter('https://github.com/'));
+```
 
 Or leave out specific services from your query:
 
-    <?php
-    use Evansims\Socialworth\Socialworth;
+```php
+$socialworth = new Socialworth(['linkedin', 'twitter']) // won't do facebook etc.
 
-    $socialworth = new Socialworth(['linkedin', 'twitter']) // won't do facebook etc.
-
-    var_dump($socialworth->all());
-    ?>
+var_dump($socialworth->all());
+```
 
 The `all()` method will return an object that you can use to grab individual
 service results or find the combined popularity from the services:
 
-    <?php
-    use Evansims\Socialworth\Socialworth;
+```php
+$socialworth = new Socialworth('https://github.com/');
+$response = $socialworth->all();
 
-    $socialworth = new Socialworth('https://github.com/');
-    $response = $socialworth->all();
+var_dump($response->total); // Total likes, shares, upvotes, etc.
+var_dump($response->reddit); // Just shares and upvotes from reddit.
+var_dump($response->twitter); // Just mentions, retweets and shares on Twitter.
+```
 
-    var_dump($response->total); // Total likes, shares, upvotes, etc.
-    var_dump($response->reddit); // Just shares and upvotes from reddit.
-    var_dump($response->twitter); // Just mentions, retweets and shares on Twitter.
-    ?>
+The `setClient` allows to set a custom Guzzle Client so you can attach subscribers or mock request
+
+```php
+$socialworth->setClient(new \GuzzleHttp\Client());
+```
 
 ## Demo Script
 A demo script is provided that allows you to query the library from your
