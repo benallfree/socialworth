@@ -3,6 +3,7 @@
 namespace Evansims\Socialworth;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ParseException;
 
 class Socialworth
 {
@@ -164,10 +165,16 @@ class Socialworth
 
         $response = $this->client->get(rtrim($endpoint, '?&'));
 
-        if ($response) {
-            return (strpos($response->getHeader('Content-Type'), 'json') !== false)
-                ? $response->json()
-                : $response->getBody()->getContents();
+        try {
+            if ($response) {
+                $raw    = $response->getBody()->getContents();
+                $isJson = strpos($response->getHeader('Content-Type'), 'json') !== false;
+
+                return ($raw and $isJson) ? $response->json() : $raw;
+            }
+
+        } catch (ParseException $e) {
+            return $raw;
         }
 
         return false;
