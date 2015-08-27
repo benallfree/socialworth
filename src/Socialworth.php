@@ -44,7 +44,7 @@ class Socialworth
     public function url($url)
     {
         if ($url) {
-            if (Validator::url()->validate($url)) {
+            if (Validator::sf('Url')->validate($url)) {
                 $this->url = $url;
                 
             } else {
