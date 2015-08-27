@@ -4,6 +4,7 @@ namespace Evansims\Socialworth;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ParseException;
+use Respect\Validation\Validator;
 
 class Socialworth
 {
@@ -43,7 +44,7 @@ class Socialworth
     public function url($url)
     {
         if ($url) {
-            if (filter_var($url, FILTER_VALIDATE_URL)) {
+            if (Validator::url()->validate($url)) {
                 $this->url = $url;
                 
             } else {
