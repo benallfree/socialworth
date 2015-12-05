@@ -20,7 +20,7 @@
         "php": ">=5.4.0",
         "lib-curl": "*",
         "guzzlehttp/guzzle": "^5.3",
-        "respect/validation": "^0.9",
+        "respect/validation": "^1.0",
         "symfony/validator": "~2.7"
     },
     "require-dev": {
