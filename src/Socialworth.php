@@ -1,6 +1,6 @@
 <?php
 
-namespace Evansims\Socialworth;
+namespace BenAllfree;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ParseException;

@@ -17,7 +17,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "BenAllfree\\Socialworth\\": "src/"
+            "BenAllfree\\": "src/"
         }
     },
     "require": {
