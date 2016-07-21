@@ -1,5 +1,5 @@
 {
-    "name": "evansims/socialworth",
+    "name": "benallfree/socialworth",
     "description": "A simple PHP library for determining the popularity of a URL across social networks.",
     "version": "2.0.2",
     "keywords": ["twitter", "facebook", "pinterest", "linkedin" ,"reddit", "google plus", "hackernews", "stumbleupon", "social network", "popularity", "analytics"],
@@ -9,11 +9,15 @@
         {
             "name": "Evan Sims",
             "homepage": "http://evansims.com"
+        },
+        {
+            "name": "Ben Allfree",
+            "homepage": "http://benallfree.com"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Evansims\\Socialworth\\": "src/"
+            "BenAllfree\\Socialworth\\": "src/"
         }
     },
     "require": {
