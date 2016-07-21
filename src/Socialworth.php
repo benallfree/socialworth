@@ -220,7 +220,7 @@ class Socialworth
             ],
 
             'twitter' => [
-                'url'      => 'http://cdn.api.twitter.com/1/urls/count.json?url='.$this->url,
+                'url'      => 'http://opensharecount.com/count.json?url='.$this->url,
                 'callback' => function($resp) {
                     return (isset($resp['count']) && $resp['count'])
                         ? (int) $resp['count']
