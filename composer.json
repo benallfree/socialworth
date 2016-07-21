@@ -24,8 +24,7 @@
         "php": ">=5.4.0",
         "lib-curl": "*",
         "guzzlehttp/guzzle": "^5.3",
-        "respect/validation": "^1.0",
-        "symfony/validator": "^3.0"
+        "respect/validation": "^1.0"
     },
     "require-dev": {
         "satooshi/php-coveralls": "dev-master"
