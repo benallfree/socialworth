@@ -165,13 +165,11 @@ class Socialworth
         }
 
         $response = $this->client->get(rtrim($endpoint, '?&'));
-
         try {
             if ($response) {
                 $raw    = $response->getBody()->getContents();
-                $isJson = strpos($response->getHeader('Content-Type'), 'json') !== false;
-
-                return ($raw and $isJson) ? $response->json() : $raw;
+                $isJson = strpos($response->getHeader('Content-Type')[0], 'json') !== false;
+                return ($raw and $isJson) ? json_decode($raw, true) : $raw;
             }
 
         } catch (ParseException $e) {
