@@ -1,39 +1,50 @@
 {
-    "name": "benallfree/socialworth",
-    "description": "A simple PHP library for determining the popularity of a URL across social networks.",
-    "version": "2.0.2",
-    "keywords": ["twitter", "facebook", "pinterest", "linkedin" ,"reddit", "google plus", "hackernews", "stumbleupon", "social network", "popularity", "analytics"],
-    "homepage": "http://github.com/evansims/socialworth",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Evan Sims",
-            "homepage": "http://evansims.com"
-        },
-        {
-            "name": "Ben Allfree",
-            "homepage": "http://benallfree.com"
-        }
-    ],
-    "repositories": [
-      {
-        "type": "vcs",
-        "url": "git@github.com:benallfree/Validation.git"
-      }
-    ],
-    "autoload": {
-        "psr-4": {
-            "BenAllfree\\": "src/"
-        }
+  "name": "benallfree/socialworth",
+  "description": "A simple PHP library for determining the popularity of a URL across social networks.",
+  "version": "2.0.2",
+  "keywords": [
+    "twitter",
+    "facebook",
+    "pinterest",
+    "linkedin",
+    "reddit",
+    "google plus",
+    "hackernews",
+    "stumbleupon",
+    "social network",
+    "popularity",
+    "analytics"
+  ],
+  "homepage": "http://github.com/evansims/socialworth",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Evan Sims",
+      "homepage": "http://evansims.com"
     },
-    "require": {
-        "php": ">=5.4.0",
-        "lib-curl": "*",
-        "guzzlehttp/guzzle": "^6.0",
-        "respect/validation": "1.*",
-        "symfony/validator": "3.1.*"
-    },
-    "require-dev": {
-        "satooshi/php-coveralls": "dev-master"
+    {
+      "name": "Ben Allfree",
+      "homepage": "http://benallfree.com"
     }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:benallfree/Validation.git"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "BenAllfree\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "lib-curl": "*",
+    "guzzlehttp/guzzle": "^6.0",
+    "respect/validation": "1.*"
+  },
+  "require-dev": {
+    "php-coveralls/php-coveralls": "^2.1"
+  }
 }

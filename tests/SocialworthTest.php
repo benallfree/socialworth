@@ -2,9 +2,11 @@
 
 namespace Tests\Socialworth;
 
-use Evansims\Socialworth\Socialworth;
+use BenAllfree\Socialworth;
 
-class SocialworthTest extends \PHPUnit_Framework_TestCase
+
+
+class SocialworthTest extends \PHPUnit\Framework\TestCase
 {
     protected $test_url = 'http://digg.com';
     protected $test_bad_url = 'supercalifragilisticexpialidocious';
